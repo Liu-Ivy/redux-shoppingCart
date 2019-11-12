@@ -25,7 +25,7 @@ class App extends Component {
       });
     }
 
-    fetch("http://localhost:8000/products")
+    fetch("http://localhost:3000/products")
       .then(res => res.json())
       .catch(err =>
         fetch("db.json")
