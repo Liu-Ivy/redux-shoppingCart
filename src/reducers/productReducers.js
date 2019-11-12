@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import { FETCH_PRODUCTS } from "../action/type";
+import { FETCH_PRODUCTS } from "../actions/type";
 
 const initialSate = { items: [] };
 
