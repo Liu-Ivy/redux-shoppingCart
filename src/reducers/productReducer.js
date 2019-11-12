@@ -1,12 +1,12 @@
 /* eslint-disable default-case */
 import { FETCH_PRODUCTS } from "../actions/type";
 
-const initialSate = { items: [] };
+const initialState = { items: [] };
 
-export default function(state = initialSate, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_PRODUCTS:
-      return { ...state, item: action.payload };
+      return { ...state, items: action.payload };
     default:
       return state;
   }

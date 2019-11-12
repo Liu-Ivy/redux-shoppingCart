@@ -8,8 +8,8 @@ import store from "./store";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       size: "",
       sort: "",
@@ -24,23 +24,12 @@ class App extends Component {
         cartItems: JSON.parse(localStorage.getItem("cartItems"))
       });
     }
-
-    fetch("http://localhost:3000/products")
-      .then(res => res.json())
-      .catch(err =>
-        fetch("db.json")
-          .then(res => res.json())
-          .then(data => data.products)
-      )
-      .then(data => {
-        this.setState({ products: data, filteredProducts: data });
-      });
   }
 
-  handleRemoveFromCart = (e, product) => {
+  handleRemoveFromCart = (e, item) => {
     this.setState(state => {
-      const cartItems = state.cartItems.filter(a => a.id !== product.id);
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      const cartItems = state.cartItems.filter(elm => elm.id !== item.id);
+      localStorage.setItem("cartItems", cartItems);
       return { cartItems: cartItems };
     });
   };
@@ -106,7 +95,7 @@ class App extends Component {
           <h1>E-commerce Shopping Cart Application</h1>
           <hr />
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-8">
               <Filter
                 count={this.state.filteredProducts.length}
                 handleSortChange={this.handleSortChange}
@@ -118,7 +107,7 @@ class App extends Component {
                 handleAddToCart={this.handleAddToCart}
               />
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <Basket
                 cartItems={this.state.cartItems}
                 handleRemoveFromCart={this.handleRemoveFromCart}
