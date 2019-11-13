@@ -33,5 +33,5 @@ class Products extends Component {
   }
 }
 
-const mapStateToProps = state => ({ products: state.products.items });
+const mapStateToProps = state => ({ products: state.products.filteredItems });
 export default connect(mapStateToProps, { fetchProducts })(Products);

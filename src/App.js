@@ -95,7 +95,7 @@ class App extends Component {
           <h1>E-commerce Shopping Cart Application</h1>
           <hr />
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-9">
               <Filter
                 count={this.state.filteredProducts.length}
                 handleSortChange={this.handleSortChange}
@@ -107,7 +107,7 @@ class App extends Component {
                 handleAddToCart={this.handleAddToCart}
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <Basket
                 cartItems={this.state.cartItems}
                 handleRemoveFromCart={this.handleRemoveFromCart}
