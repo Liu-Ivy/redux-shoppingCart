@@ -9,6 +9,7 @@ class Filter extends Component {
         <div className="col-md-4">{`${this.props.count} products found.`}</div>
         <div className="col-md-4">
           <label>
+            {" "}
             Order by
             <select
               className="form-control"
