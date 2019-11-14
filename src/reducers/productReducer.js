@@ -1,7 +1,9 @@
 /* eslint-disable default-case */
-import { FETCH_PRODUCTS } from "../actions/type";
-import { FILTER_PRODUCTS_BY_SIZE } from "../actions/type";
-import { ORDER_PRODUCTS_BY_PRICE } from "../actions/type";
+import {
+  FETCH_PRODUCTS,
+  FILTER_PRODUCTS_BY_SIZE,
+  ORDER_PRODUCTS_BY_PRICE
+} from "../actions/type";
 
 const initialState = { items: [], filteredProducts: [], size: "", sort: "" };
 

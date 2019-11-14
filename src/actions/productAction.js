@@ -25,7 +25,8 @@ export const filterProducts = (products, size) => dispatch => {
   });
 };
 
-export const sortProducts = (products, sort) => dispatch => {
+export const sortProducts = (items, sort) => dispatch => {
+  const products = items.slice();
   if (sort !== "") {
     products.sort((a, b) =>
       sort === "lowestprice"
